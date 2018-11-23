@@ -1,0 +1,56 @@
+name: viber-unofficial
+version: '0.1' 
+summary: Single-line elevator pitch for your amazing snap 
+description: |
+  This is my-snap's description. You have a paragraph or two to tell the
+  most important story about your snap. Keep it under 100 words though,
+  we live in tweetspace and your description wants to look good in the snap
+  store.
+
+#grade: devel 
+#confinement: devmode
+grade: stable
+confinement: strict
+
+parts:
+  viber:
+    plugin: dump
+    source: http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
+    source-type: deb
+    after: [desktop-glib-only]
+    stage-packages:
+      - libxss1
+      - libssl1.0.0
+      - libpulse0
+      - libpulse-mainloop-glib0
+      - libasound2
+      - libnss3
+      - libxcomposite1
+      - libxcursor1
+      - libxdamage1
+      - libcurl3
+      - libgstreamer-plugins-base1.0-0
+      - libgstreamer1.0-0
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-ugly
+      - gstreamer1.0-pulseaudio
+      - gstreamer1.0-libav
+apps:
+  viber:
+    command: desktop-launch $SNAP/opt/viber/Viber
+    desktop: usr/share/applications/viber.desktop
+    plugs: 
+     - home
+     - unity7
+     - opengl
+     - gsettings
+     - network
+     - network-bind
+     - x11
+     - desktop
+     - desktop-legacy
+    environment:
+      DISABLE_WAYLAND: 1
+      WAYLAND_DISPLAY: no-display
+      QTCOMPOSE: $SNAP/usr/share/X11/locale 
