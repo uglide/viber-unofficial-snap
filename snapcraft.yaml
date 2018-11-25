@@ -64,6 +64,7 @@ apps:
      - x11
      - desktop
      - desktop-legacy
+     - pulseaudio
     environment:
       DISABLE_WAYLAND: 1
       WAYLAND_DISPLAY: no-display
