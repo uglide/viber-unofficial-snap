@@ -63,6 +63,7 @@ apps:
      - desktop
      - desktop-legacy
      - pulseaudio
+     - camera
     environment:
       DISABLE_WAYLAND: 1
       WAYLAND_DISPLAY: no-display
