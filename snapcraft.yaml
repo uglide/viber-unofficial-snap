@@ -43,6 +43,7 @@ parts:
       - libxcb-icccm4
       - libxcb-shape0
       - libxcb-util1
+      - libpci3
       - gstreamer1.0-plugins-base
       - gstreamer1.0-plugins-good
       - gstreamer1.0-plugins-ugly
